@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --purple-background: #835afd;
+    --purple-light: #e559f9;
+    --google-red: #ea4335;
+    --grey-borders: #a8a8b3;
+}
+
+body {
+    background: #f8f8f8;
+    color: #29292e;
+}
+
+body, input, button, textarea {
+    font: 400 16px 'Roboto' sans-serif;
+    // font-family: 'Poppins', sans-serif;
+    // font-family: 'Roboto', sans-serif;
+}
