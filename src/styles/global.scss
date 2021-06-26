@@ -7,16 +7,17 @@
     --purple-background: #835afd;
     --purple-light: #e559f9;
     --google-red: #ea4335;
+    --black-text: #29292e;
     --grey-borders: #a8a8b3;
+    --white-background: #e2e2e2;
+    --white-pretty: #f8f8f8;
 }
 
 body {
-    background: #f8f8f8;
-    color: #29292e;
+    background: var(--white-pretty);
+    color: var(--black-text);
 }
 
 body, input, button, textarea {
     font: 400 16px 'Roboto' sans-serif;
-    // font-family: 'Poppins', sans-serif;
-    // font-family: 'Roboto', sans-serif;
 }
