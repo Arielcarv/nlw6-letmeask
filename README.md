@@ -1,46 +1,70 @@
-# Getting Started with Create React App
+<p align="center">
+  <img alt="Letmeask" src="src/assets/images/logo.svg" width="160px">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img src="https://img.shields.io/static/v1?label=NLW&message=06&color=8257E5&labelColor=000000" alt="NLW Together 06" />
+  
+  <img src="https://img.shields.io/github/stars/rocketseat-education/nlw-06-reactjs?label=stars&message=MIT&color=8257E5&labelColor=000000" alt="Stars">
 
-## Available Scripts
+  <img  src="https://img.shields.io/static/v1?label=license&message=MIT&color=8257E5&labelColor=000000" alt="License">   
+</p>
 
-In the project directory, you can run:
+<br>
 
-### `yarn start`
+## 💻 Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Letmeask is perfect for content creators to create Q&A rooms with their public, on an organized and democratic way. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Project developed during the  **[Next Level Week Together](https://nextlevelweek.com/)**, presented during 20th to 27th june, 2021.
+NLW #6.
+React path taught by [Diego Fernandes](https://github.com/diego3g)
 
-### `yarn test`
+<h1 align="center">
+    <img alt="Letmeask" src="src/assets/images/cover.svg" />
+</h1>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🧪 Technologies
 
-### `yarn build`
+Developed with the following technologies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [React](https://reactjs.org)
+- [Firebase](https://firebase.google.com/)
+- [TypeScript](https://www.typescriptlang.org/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 How to execute
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Clone the project and access its folder.
 
-### `yarn eject`
+```bash
+$ git clone https://github.com/Arielcarv/nlw6-letmeask.git
+$ cd nlw6-letmeask
+```
+To start it up, follow the steps bellow:
+```bash
+# Install dependencies
+$ yarn
+# Launch project
+$ yarn start
+```
+The app will be available on your browser at http://localhost:3000.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Notice that you'll need a Firebase account [Firebase](https://firebase.google.com/) and a project there to make the Realtime Database available.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🔖 Layout
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+You can visualize the layout of the project through the link bellow:
 
-## Learn More
+- [Layout Web](https://www.figma.com/file/u0BQK8rCf2KgzcukdRRCWh/Letmeask/duplicate) 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You need a [Figma](http://figma.com/) account.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+## 📝 License
+
+This project is under MIT license. See file [LICENSE](LICENSE.md) for more details.
+
+---
+
+Made with 💜 by Rocketseat 👋🏻 [Join our community](https://discord.gg/gKUVrzrPrU)
