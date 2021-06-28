@@ -36,9 +36,14 @@ export function Home() {
         alert("Room does not exist.")
         return;
     }
-    if (roomRef.val().closedAt) {
-      let date = roomRef.val().closedAt
-      alert(`Room already closed at ${date}`)
+
+    const closingDate = (roomRef.val().closedAt)
+    if (closingDate) {
+      let stringClosingDate = closingDate.toString();
+      var yearArray = stringClosingDate.match(/(\d{4})/g);
+      var monthArray = stringClosingDate.match(/(?<=-)(\d{2})(?=-)/g);
+      var dayArray = stringClosingDate.match(/(?<=-)(\d{2})(?=T)/g);
+      alert(`Room already closed at ${dayArray[0]}/${monthArray[0]}/${yearArray[0]}`)
       return;
     }
     history.push(`/rooms/${roomCode}`);

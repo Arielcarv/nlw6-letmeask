@@ -1,5 +1,7 @@
 import logoImg from "../assets/images/logo.svg";
 import deleteImg from "../assets/images/delete.svg";
+import checkImg from "../assets/images/check.svg";
+import answerImg from "../assets/images/answer.svg";
 import { useParams } from "react-router";
 import { Button } from "../components/Button";
 import { RoomCode } from "../components/RoomCode";
@@ -15,23 +17,53 @@ type RoomParameters = {
 
 export function AdminRoom() {
 	// const { user } = useAuth();
-  const history = useHistory();
+	const history = useHistory();
 	const roomParameters = useParams<RoomParameters>();
 	const roomId = roomParameters.id;
 	const { title, questions } = useRoom(roomId);
 
-  async function handleEndRoom() {
-    await database.ref(`rooms/${roomId}`).update({ 
-      closedAt: new Date('2015-03-04T00:00:00.000Z'),
-    })
-    history.push('/');
-  }
+	async function handleEndRoom() {
+		await database.ref(`rooms/${roomId}`).update({
+			closedAt: new Date(),
+		});
+		history.push("/");
+	}
 
-  async function handleDeleteQuestion(questionId: string) {
-    if (window.confirm('Are you sure you want to delete this question?')) {
-      await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
-    }
-  }
+	async function handleDeleteQuestion(questionId: string) {
+		if (window.confirm("Are you sure you want to delete this question?")) {
+			await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
+		}
+	}
+
+	async function handleCheckQuestionAsAnswered(
+		questionId: string,
+		isAnswered: boolean
+	) {
+		if (isAnswered) {
+			await database.ref(`rooms/${roomId}/questions/${questionId}/`).update({
+				isAnswered: false,
+			});
+		} else {
+			await database.ref(`rooms/${roomId}/questions/${questionId}/`).update({
+				isAnswered: true,
+			});
+		}
+	}
+
+	async function handleHighlightQuestion(
+		questionId: string,
+		isHighlighted: boolean
+	) {
+		if (isHighlighted) {
+			await database.ref(`rooms/${roomId}/questions/${questionId}/`).update({
+				isHighlighted: false,
+			});
+		} else {
+			await database.ref(`rooms/${roomId}/questions/${questionId}/`).update({
+				isHighlighted: true,
+			});
+		}
+	}
 
 	return (
 		<div id="page-room">
@@ -40,7 +72,9 @@ export function AdminRoom() {
 					<img src={logoImg} alt="LetMeAsk Logo" />
 					<div>
 						<RoomCode code={roomId} />
-						<Button isOutlined onClick={handleEndRoom} >Close Room</Button>
+						<Button isOutlined onClick={handleEndRoom}>
+							Close Room
+						</Button>
 					</div>
 				</div>
 			</header>
@@ -58,13 +92,36 @@ export function AdminRoom() {
 								key={question.id}
 								content={question.content}
 								author={question.author}
+								isAnswered={question.isAnswered}
+								isHighlighted={question.isHighlighted}
 							>
+								{/* Children BEGIN */}
+								<button
+									type="button"
+									onClick={() =>
+										handleCheckQuestionAsAnswered(
+											question.id,
+											question.isAnswered
+										)
+									}
+								>
+									<img src={checkImg} alt="Check Question as answered" />
+								</button>
+								<button
+									type="button"
+									onClick={() =>
+										handleHighlightQuestion(question.id, question.isHighlighted)
+									}
+								>
+									<img src={answerImg} alt="Highlight Question" />
+								</button>
 								<button
 									type="button"
 									onClick={() => handleDeleteQuestion(question.id)}
 								>
 									<img src={deleteImg} alt="Remove Question" />
 								</button>
+								{/* Children END */}
 							</Question>
 						);
 					})}
