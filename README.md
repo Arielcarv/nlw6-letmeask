@@ -20,9 +20,7 @@ Project developed during the  **[Next Level Week Together](https://nextlevelweek
 NLW #6.
 React path taught by [Diego Fernandes](https://github.com/diego3g)
 
-<h1 align="center">
-    <img alt="Letmeask" src="src/assets/images/cover.svg" />
-</h1>
+Deployed at: https://nlw6-letmeask-8d4df.web.app/
 
 ## 🧪 Technologies
 
@@ -32,7 +30,7 @@ Developed with the following technologies:
 - [Firebase](https://firebase.google.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 
-## 🚀 How to execute
+## 🚀 How to execute locally
 
 Clone the project and access its folder.
 
@@ -53,6 +51,10 @@ Notice that you'll need a Firebase account [Firebase](https://firebase.google.co
 
 
 ## 🔖 Layout
+
+<h1 align="center">
+    <img alt="Letmeask" src="src/assets/images/cover.svg" />
+</h1>
 
 You can visualize the layout of the project through the link bellow:
 
